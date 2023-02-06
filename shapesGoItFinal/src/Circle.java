@@ -1,11 +1,11 @@
-class Circle extends Shape { // коло
+class Circle extends Shape {
     private   Point centre;
     private   int radius;
 
     public Circle(Point a, int radius1) {
-        this.centre = a;
-        this.radius = radius1;
-        this.nameShape = "circle";
+      super(a, null, null, null, radius1);
+      setNameShape("circle");
+      this.centre = a;
     }
 
     public Point getCentre() {
@@ -35,7 +35,7 @@ class Circle extends Shape { // коло
     }
 
     String output() {
-        return this.nameShape;
+        return this.getNameShape();
     }
 
     public String toString() {

@@ -7,8 +7,7 @@ class Trapezium extends Shape {
 
     public Trapezium(Point a, Point b, Point c, Point d) {
 
-        //основи паралельні: коеффіцієнти нахилу основ будуть рівні, а коэфициенты сторін не будуть
-
+        super(a,b,c,d, 0);
         double k_BC = (c.getY()-b.getY())/(c.getX()-b.getX());
         double k_AD = (d.getY()-a.getY())/(d.getX()-a.getX());
         double k_AB = (b.getY()-a.getY())/(b.getX()-a.getX());
@@ -22,7 +21,7 @@ class Trapezium extends Shape {
             this.d = d;
 
         } else throw new  IllegalArgumentException("These coordinates are not correct");
-        nameShape = "rhombus";
+        setNameShape("rhombus");
     }
 
     public Point getA() {
@@ -42,7 +41,7 @@ class Trapezium extends Shape {
     }
 
     public String output() {
-        return nameShape;
+        return getNameShape();
     }
 
 

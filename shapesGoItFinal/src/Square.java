@@ -1,14 +1,15 @@
-class Square extends Shape {  // чотирикутник
+class Square extends Shape {
 
-    private Point a;
-    private Point b;
-    private Point c;
-    private Point d;
+        private Point a;
+        private Point b;
+        private Point c;
+        private Point d;
 
 
     public Square(Point a, Point b, Point c, Point d) {
 
-        // усі сторони мають бути рівними
+        super(a,b,c,d, 0);
+
         double ab = Math.sqrt(((b.getX()-a.getX())*(b.getX()-a.getX()))  + ((b.getY()-a.getY())*(b.getY()-a.getY())));
         double bc = Math.sqrt(((c.getX()-b.getX())*(c.getX()-b.getX()))  + ((c.getY()-b.getY())*(c.getY()-b.getY())));
         double cd = Math.sqrt(((d.getX()-c.getX())*(d.getX()-c.getX()))  + ((d.getY()-c.getY())*(d.getY()-c.getY())));
@@ -21,7 +22,7 @@ class Square extends Shape {  // чотирикутник
             this.c = c;
             this.d = d;
         } else throw new  IllegalArgumentException("These coordinates are not correct");
-        nameShape = "square";
+        setNameShape("square");
     }
     public Point getA() {
         return a;
@@ -55,7 +56,7 @@ class Square extends Shape {  // чотирикутник
 
     @Override
     String output() {
-        return this.nameShape;
+        return this.getNameShape();
     }
 
     @Override

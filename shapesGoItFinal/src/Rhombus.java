@@ -1,12 +1,12 @@
-class Rhombus extends Shape { // TODO ромб
+class Rhombus extends Shape {
     private Point a;
     private Point b;
     private Point c;
     private Point d;
 
     public Rhombus(Point a, Point b, Point c, Point d) {
+        super(a,b,c,d, 0);
 
-        // сміжні сторони у ромба мають бути рівними
         double ab = Math.sqrt(((b.getX()-a.getX())*(b.getX()-a.getX()))  + ((b.getY()-a.getY())*(b.getY()-a.getY())));
         double ad = Math.sqrt(((d.getX()-a.getX())*(d.getX()-a.getX()))+ ((d.getY()-a.getY())*(d.getY()-a.getY())));
         if (!a.equals(b) && !b.equals(c) && !c.equals(d) && !a.equals(d)  && (ab==ad)) {
@@ -16,7 +16,7 @@ class Rhombus extends Shape { // TODO ромб
             this.d = d;
 
         } else throw new  IllegalArgumentException("These coordinates are not correct");
-        nameShape = "rhombus";
+        setNameShape("rhombus");
     }
 
 
@@ -64,6 +64,6 @@ class Rhombus extends Shape { // TODO ромб
     }
 
     String output() {
-        return this.nameShape;
+        return this.getNameShape();
     }
 }

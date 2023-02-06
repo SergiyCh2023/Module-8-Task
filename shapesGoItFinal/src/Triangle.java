@@ -1,4 +1,4 @@
-class Triangle extends Shape {  // трикутник
+class Triangle extends Shape {
 
     private Point a;
     private Point b;
@@ -6,7 +6,8 @@ class Triangle extends Shape {  // трикутник
 
 
     public Triangle(Point a, Point b, Point c) {
-        // перевірки на не виродженість трикутника: сума 2 сторін трикутника має бути більшою ніж інша сторона
+
+        super(a,b,c,null, 0);
         double ab = Math.sqrt(((b.getX()-a.getX())*(b.getX()-a.getX())) + ((b.getY()-a.getY())*(b.getY()-a.getY())));
         double ac = Math.sqrt(((c.getX()-a.getX())*(c.getX()-a.getX())) + ((c.getY()-a.getY())*(c.getY()-a.getY())));
         double bc = Math.sqrt(((c.getX()-b.getX())*(c.getX()-b.getX())) + ((c.getY()-b.getY())*(c.getY()-b.getY())));
@@ -18,7 +19,7 @@ class Triangle extends Shape {  // трикутник
         } else throw new  IllegalArgumentException("These coordinates are not correct");
 
 
-        nameShape = "triangle";
+        setNameShape("triangle");
     }
 
 
@@ -47,11 +48,10 @@ class Triangle extends Shape {  // трикутник
     }
 
     String output() {
-    return this.nameShape;
+    return this.getNameShape();
   }
 
-    //TODO      area
-    public double area() {
+        public double area() {
 
         double ab = Math.sqrt(((b.getX()-a.getX())*(b.getX()-a.getX()))  + ((b.getY()-a.getY())*(b.getY()-a.getY())));
         double ac = Math.sqrt(((c.getX()-a.getX())*(c.getX()-a.getX()))+ ((c.getY()-a.getY())*(c.getY()-a.getY())));

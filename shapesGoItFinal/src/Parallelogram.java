@@ -1,12 +1,12 @@
 public class Parallelogram extends Shape {
-    private Point a;
-    private Point b;
-    private Point c;
-    private Point d;
+        private Point a;
+        private Point b;
+        private Point c;
+        private Point d;
 
     public Parallelogram(Point a, Point b, Point c, Point d) {
+        super(a,b,c,d, 0);
 
-        //протилежні сторони паралельні: коеффіцієнти нахилу сторін будуть рівні
         double k_BC = (c.getY()-b.getY())/(c.getX()-b.getX());
         double k_AD = (d.getY()-a.getY())/(d.getX()-a.getX());
         double k_AB = (b.getY()-a.getY())/(b.getX()-a.getX());
@@ -20,7 +20,7 @@ public class Parallelogram extends Shape {
             this.d = d;
 
         } else throw new  IllegalArgumentException("These coordinates are not correct");
-        nameShape = "parallelogram";
+        setNameShape("parallelogram");
     }
 
     public Point getA() {
@@ -40,7 +40,7 @@ public class Parallelogram extends Shape {
     }
 
     public String output() {
-        return nameShape;
+        return getNameShape();
     }
 
 
@@ -68,7 +68,7 @@ public class Parallelogram extends Shape {
         double areaBCD = Math.sqrt(pBCD * (pBCD - bc) * (pBCD - cd) * (pBCD - bd));
 
         return areaABD + areaBCD;
-    }  // паралелограм
+    }
 
     @Override
     public double perimetr() {
