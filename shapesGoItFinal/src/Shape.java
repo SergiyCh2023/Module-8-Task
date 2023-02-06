@@ -1,4 +1,4 @@
-public abstract class Shape implements Service {
+public abstract class Shape implements AreaPerimetrServiceProvider {
  private String nameShape;
  private Point a;
  private int radius;
